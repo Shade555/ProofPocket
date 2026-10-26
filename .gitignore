@@ -1,35 +1,160 @@
-# dependencies
-/node_modules
+# =============================================================================
+# ProofPocket - Comprehensive .gitignore
+# Next.js 15+ (App Router), React, TypeScript, Node.js, Vitest, Sentry, Tailwind
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Dependencies
+# -----------------------------------------------------------------------------
+node_modules/
 /.pnp
 .pnp.js
-.yarn/install-state.gz
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 
-# testing
-/coverage
+# -----------------------------------------------------------------------------
+# Next.js & Build Outputs
+# -----------------------------------------------------------------------------
+.next/
+out/
+build/
+dist/
+.swc/
 
-# next.js
-/.next/
-/out/
+# -----------------------------------------------------------------------------
+# Environment & Secret Credentials (CRITICAL)
+# -----------------------------------------------------------------------------
+.env
+.env*.local
+.env.development
+.env.test
+.env.production
+*.env
+# Ensure the example environment file is always tracked
+!.env.example
 
-# production
-/build
-
-# misc
-.DS_Store
+# Private Keys, Certificates & Tokens
 *.pem
+*.key
+*.cert
+*.crt
+*.pfx
+*.p12
 
-# debug
+# -----------------------------------------------------------------------------
+# Sentry & Observability
+# -----------------------------------------------------------------------------
+.sentryclirc
+.sentry-native/
+
+# -----------------------------------------------------------------------------
+# Testing & Code Coverage
+# -----------------------------------------------------------------------------
+coverage/
+*.lcov
+.nyc_output/
+.vitest/
+
+# -----------------------------------------------------------------------------
+# TypeScript & Linters
+# -----------------------------------------------------------------------------
+*.tsbuildinfo
+next-env.d.ts
+.eslintcache
+.stylelintcache
+.prettiercache
+
+# -----------------------------------------------------------------------------
+# Logs & Process Diagnostics
+# -----------------------------------------------------------------------------
+logs/
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# local env files
-.env*.local
-.env
+# Diagnostic & Runtime Dumps
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+core
+*.pid
+*.seed
+*.pid.lock
 
-# vercel
+# -----------------------------------------------------------------------------
+# Uploads, Temporary & Ephemeral Artifacts
+# -----------------------------------------------------------------------------
+tmp/
+temp/
+uploads/
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+
+# -----------------------------------------------------------------------------
+# Operating System Files
+# -----------------------------------------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+# -----------------------------------------------------------------------------
+# IDEs & Code Editors
+# -----------------------------------------------------------------------------
+# JetBrains (WebStorm, IntelliJ IDEA)
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Other Editors (Sublime, Vim)
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*.swn
+
+# -----------------------------------------------------------------------------
+# Cloud Platforms & Hosting
+# -----------------------------------------------------------------------------
 .vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+.render
